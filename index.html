@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet your next backyard favorites. Healthy, happy, pasture-raised chickens from Willow & Wing Farm."
+    />
+    <meta name="theme-color" content="#f8f7f2" />
+    <title>Willow & Wing Farm — Chickens raised with care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="announcement">
+      <span class="announcement-dot"></span>
+      Farm-raised with love, ready for a new home
+      <span class="announcement-divider">·</span>
+      Local pickup available
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Willow and Wing Farm home">
+        <span class="brand-mark" aria-hidden="true">w<span>&</span>w</span>
+        <span class="brand-name">willow <span>&</span> wing<small>FAMILY FARM · EST. 2014</small></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#shop">Our chickens</a>
+        <a href="#story">Our farm</a>
+        <a href="#care">Our promise</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button admin-trigger" id="admin-trigger" aria-label="Open farm dashboard" title="Farm dashboard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15v-4m4 4V7m4 8v-6m4 10V9" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> A little more life in your backyard</div>
+          <h1>Good chickens.<br /><em>Good living.</em></h1>
+          <p>Raised on open pasture, handled with care, and ready to make themselves at home in yours.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#shop">Meet the flock <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#story">A little about us <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-note"><span class="note-avatars" aria-hidden="true"><i>✿</i><i>♡</i><i>✳</i></span><span><strong>Raised right, from day one.</strong><small>A small family farm with a big heart.</small></span></div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="https://images.pexels.com/photos/36660076/pexels-photo-36660076/free-photo-of-free-range-brown-hen-in-sunny-pasture.jpeg?auto=compress&cs=tinysrgb&w=1400"
+            alt="A healthy hen exploring a sunlit farmyard"
+          />
+          <div class="hero-image-label"><span class="label-spark">✳</span><span>Room to roam.<br /><strong>Space to be a chicken.</strong></span></div>
+          <span class="hero-side-note">THE WILLOW & WING WAY</span>
+          <span class="hero-stamp" aria-hidden="true"><span>HAPPY<br />HENS<br />HAPPY<br />HOME</span><b>✿</b></span>
+        </div>
+        <span class="hero-decoration" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="trust-strip" id="care" aria-label="Our farming values">
+        <div class="trust-item"><span class="trust-icon">✳</span><span><strong>Room to roam</strong><small>Pasture-raised, always</small></span></div>
+        <div class="trust-item"><span class="trust-icon">♡</span><span><strong>Raised with care</strong><small>Healthy, happy birds</small></span></div>
+        <div class="trust-item"><span class="trust-icon">⌂</span><span><strong>Know your farmer</strong><small>Family farm, local roots</small></span></div>
+        <div class="trust-item"><span class="trust-icon">✿</span><span><strong>Ready for home</strong><small>Pickup made simple</small></span></div>
+      </section>
+
+      <section class="shop-section section-pad" id="shop">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> Find your new favorite</div>
+            <h2>A flock of <em>good eggs.</em></h2>
+            <p class="section-intro">Every bird has a little personality. Find the right fit for your coop and your kind of country living.</p>
+          </div>
+          <a class="text-link desktop-link" href="#story">How we raise them <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="shop-controls">
+          <div class="category-tabs" id="category-tabs" role="group" aria-label="Filter chickens by age">
+            <button class="category-tab active" data-category="all">All chickens <span id="count-all">0</span></button>
+            <button class="category-tab" data-category="4">4 months <span id="count-4">0</span></button>
+            <button class="category-tab" data-category="5">5 months <span id="count-5">0</span></button>
+            <button class="category-tab" data-category="6">6+ months <span id="count-6">0</span></button>
+          </div>
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 5 5" /></svg>
+            <input id="product-search" type="search" placeholder="Find your chicken" aria-label="Search chickens" />
+          </label>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>✿</span><h3>No chickens found just yet.</h3><p>Try a different age category or search.</p>
+        </div>
+        <div class="shop-footnote"><span class="footnote-star">✳</span> Each chicken is raised with care. Explore a listing to learn more about your future flock.</div>
+      </section>
+
+      <section class="farm-story" id="story">
+        <div class="story-image">
+          <img src="https://images.pexels.com/photos/38714284/pexels-photo-38714284/free-photo-of-close-up-of-free-range-hens-outdoors.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Free-range hens pecking outdoors on a green family farm" loading="lazy" />
+          <div class="story-image-note"><span>✿</span><strong>Small flock.<br />Big love.</strong><small>Always our kind of farming.</small></div>
+        </div>
+        <div class="story-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> From our little patch of land</div>
+          <h2>We believe happy hens make a <em>happier home.</em></h2>
+          <p>Willow & Wing started with a handful of hens, a patch of pasture, and the idea that raising chickens should feel a little more thoughtful. These days, not much has changed.</p>
+          <p>We raise each bird with room to scratch, sunshine on their backs, and plenty of gentle human company. When they’re ready, they’re ready to bring a little farmyard joy to you.</p>
+          <div class="signature"><span class="signature-mark">w&w</span><span>With love, <strong>The Willow & Wing family</strong></span></div>
+        </div>
+      </section>
+
+      <section class="closing-cta">
+        <span class="cta-flower" aria-hidden="true">✿</span>
+        <div class="eyebrow">A good home starts with a good chicken</div>
+        <h2>Your coop called.<br /><em>It’s ready for company.</em></h2>
+        <a class="button button-light" href="#shop">Find your flock <span aria-hidden="true">↗</span></a>
+        <span class="cta-bottom-note">GROWN WITH CARE · SHARED WITH LOVE</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">w<span>&</span>w</span><span class="brand-name">willow <span>&</span> wing<small>FAMILY FARM · EST. 2014</small></span></a>
+      <p>A little more life in your backyard.<br />Raised with love at Willow & Wing Farm.</p>
+      <div class="footer-right"><a href="#shop">Meet the flock</a><span>© <span id="year"></span> Willow & Wing Farm</span></div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <dialog class="detail-dialog" id="detail-dialog" aria-label="Chicken details">
+      <button class="dialog-close" data-close="detail-dialog" aria-label="Close details">×</button>
+      <div id="detail-content"></div>
+    </dialog>
+
+    <dialog class="admin-dialog" id="admin-dialog" aria-label="Farm dashboard">
+      <div class="admin-header"><div><div class="eyebrow">Willow & Wing · Farm tools</div><h2>Flock <em>manager</em></h2><p>Keep your listings and availability up to date.</p></div><button class="dialog-close" data-close="admin-dialog" aria-label="Close dashboard">×</button></div>
+      <div class="admin-body">
+        <div class="admin-toolbar"><div class="admin-stats" id="admin-stats"></div><button class="button button-dark admin-add" id="add-product">＋ Add a chicken</button></div>
+        <div class="admin-list" id="admin-list"></div>
+        <p class="admin-storage-note">Changes are saved in this browser. They won’t appear on other devices.</p>
+      </div>
+    </dialog>
+
+    <dialog class="form-dialog" id="product-form-dialog" aria-label="Chicken listing editor">
+      <form id="product-form" class="product-form">
+        <div class="form-heading"><div><div class="eyebrow">Farm listing</div><h2 id="form-title">Add a <em>chicken.</em></h2></div><button type="button" class="dialog-close" data-close="product-form-dialog" aria-label="Close form">×</button></div>
+        <input type="hidden" name="id" />
+        <label>Chicken name<input name="name" required maxlength="60" placeholder="e.g. Sunny the Sussex" /></label>
+        <div class="form-row">
+          <label>Breed<input name="breed" required maxlength="50" placeholder="e.g. Speckled Sussex" /></label>
+          <label>Age<select name="age" required><option value="4">4 months</option><option value="5">5 months</option><option value="6">6 months or older</option></select></label>
+        </div>
+        <div class="form-row">
+          <label>Price ($)<input name="price" type="number" required min="0" step="0.01" placeholder="35.00" /></label>
+          <label>Available quantity<input name="stock" type="number" required min="0" step="1" placeholder="3" /></label>
+        </div>
+        <label>Photo URL<input name="image" type="url" required placeholder="https://..." /></label>
+        <label>Description<textarea name="description" required rows="3" maxlength="300" placeholder="What makes this chicken special?"></textarea></label>
+        <label class="availability-toggle"><input name="available" type="checkbox" checked /><span>Available for a new home</span></label>
+        <div class="form-actions"><button type="button" class="button button-outline" data-close="product-form-dialog">Cancel</button><button type="submit" class="button button-dark">Save listing</button></div>
+      </form>
+    </dialog>
+  </body>
+</html>
